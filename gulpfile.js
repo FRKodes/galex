@@ -1,0 +1,27 @@
+'use strict';
+
+var gulp = require('gulp');
+var stylus = require('gulp-stylus');
+var concatCss = require('gulp-concat-css');
+var watch = require('gulp-watch');
+
+gulp.task('compress', function () {
+	gulp.src('./css/main.styl')
+		.pipe(stylus({
+			compress: true
+		}))
+		.pipe(gulp.dest('./css/'));
+});
+
+gulp.task('concat', function () {
+	return gulp.src('./css/*.css')
+		.pipe(concatCss("./style.css"))
+		.pipe(gulp.dest('./'));
+});
+
+gulp.task('watch', function() {
+	gulp.watch('./css/main.styl', ['compress', 'concat']);
+});
+
+// Default gulp task to run
+gulp.task('default', ['compress', 'concat', 'watch']);
