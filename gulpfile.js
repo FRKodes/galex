@@ -2,6 +2,7 @@
 
 var gulp = require('gulp');
 var stylus = require('gulp-stylus');
+var concat = require('gulp-concat');
 var concatCss = require('gulp-concat-css');
 var watch = require('gulp-watch');
 
@@ -13,15 +14,27 @@ gulp.task('compress', function () {
 		.pipe(gulp.dest('./css/'));
 });
 
-gulp.task('concat', function () {
+// gulp.task('concat', function () {
+// 	return gulp.src('./css/*.css')
+// 		.pipe(concatCss("./style.css"))
+// 		.pipe(gulp.dest('./'));
+// });
+
+gulp.task('concat', function() {
 	return gulp.src('./css/*.css')
-		.pipe(concatCss("./style.css"))
+		.pipe(concat('style.css'))
+		.pipe(gulp.dest('./'));
+});
+
+gulp.task('scripts', function() {
+	return gulp.src('./js/*.js')
+		.pipe(concat('all.js'))
 		.pipe(gulp.dest('./'));
 });
 
 gulp.task('watch', function() {
-	gulp.watch('./css/main.styl', ['compress', 'concat']);
+	gulp.watch('./css/main.styl', ['compress', 'concat', 'scripts']);
 });
 
 // Default gulp task to run
-gulp.task('default', ['compress', 'concat', 'watch']);
+gulp.task('default', ['compress', 'concat', 'scripts', 'watch']);

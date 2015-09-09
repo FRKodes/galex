@@ -33,7 +33,7 @@ get_header(); ?>
 				<div class="section-title"><img src="/wp-content/themes/galex/images/cerca-mobile.png" alt="Galex cerca de tí"></div>
 				<div class="place-carousel">
 					<div class="item">
-						<div class="image"><img src="/wp-content/themes/galex/images/carousel-place.jpg" alt="carousel-place"></div>
+						<div class="image"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="carousel-place"></div>
 						<p class="title">Plaza Lomas, Chedraui Tonalá.</p>
 						<div class="info">
 							<div class="address">Río Nilo #345</div>
