@@ -11,4 +11,6 @@ $( document ).ready(function() {
     		});
 
     $('ul.sub-menu').addClass('dropdown-menu').removeClass('sub-menu');
+
+    $('.main-banner').slick();
 });

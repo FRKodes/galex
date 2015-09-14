@@ -3,7 +3,8 @@ azul = #0C18C4
 azulClaro = #01AEF0
 azulMedio = #1866B0
 amarillo = #FFC600
-
+.container-fluid.brands
+	overflow visible
 .form-control
 	border 1px solid azulClaro
 	color azulClaro
@@ -78,12 +79,41 @@ body
 				&:focus
 				&:active
 					color transparent
+	.near-location
+		display none
 	.main-banner
 		background transparent url(./images/fondo-banner-principal.jpg) no-repeat center top
 		background-size cover
 		border-bottom 5px solid rojo
 		height 400px
 		width 100%
+		.item
+			overflow hidden
+			height 395px
+			position relative
+			img
+				width 200%
+				margin-left -25%
+				position absolute
+				bottom 0
+		.slick-prev
+		.slick-next
+			position absolute
+			top 45%
+			font-size 5em
+			color rojo
+			background-color transparent
+			border none
+			button
+				&:focus
+				&:active
+				&:hover
+					outline none
+		.slick-prev
+			left 0
+			z-index 10
+		.slick-next
+			right 0
 	.brands
 		border-bottom 5px solid rojo
 		padding-bottom 20px
@@ -158,6 +188,9 @@ body
 			img
 				width 100%
 		.place-carousel
+			.inner-section-title
+			.place-map
+				display none
 			.item
 				img
 					height auto
@@ -171,22 +204,26 @@ body
 					margin-top -50px
 					padding 0 5%
 					position relative
-				.info
-					color white
-					overflow hidden
-					padding 10px 5%
-					.view-more
+				.map-info-container
+					width 90%
+					margin 0 auto
+					padding-top 10px
+					.info
 						color white
-						float right
-						margin 10px 0
-						text-decoration underline
+						overflow hidden
+						padding-top 10px
+						.view-more
+							color white
+							float right
+							margin 10px 0
+							text-decoration underline
 	.find-branches
 		background azulClaro url(./images/pin.png) no-repeat left center
 		border-radius 3px
 		margin 10px auto
 		padding 10px 0
 		text-align center
-		width 90%
+		width 94%
 		a
 			color white
 	.newsletter
@@ -370,6 +407,11 @@ body
 	.btn.btn-primary
 		font-size 1.4em
 	body
+		.main-banner
+			.item
+				img
+					width 110%
+					margin-left 0
 		.brands
 			text-align center
 			.block-unity
@@ -430,12 +472,32 @@ body
 				.bottom
 					margin-top -30px
 @media screen and (min-width:768px)
+	.sucursales
+		.styled-select select
+			font-size 1.2em
+			line-height 1.2em
+		.styled-select
+			margin 0 auto
+			width 400px
 	body
 		.navbar-nav
 			ul
+				padding 18px 0
+				text-align right
 				li
 					display inline-block
 					margin-left 3px
+					font-size 1.2em
+					margin-right 10px
+					&:last-of-type
+						margin-right 0
+					a
+						color white
+		.main-banner
+			.item
+				img
+					width 100%
+					margin-left 10%
 		.place
 			position relative
 			border-top 6px solid rojo
@@ -450,8 +512,266 @@ body
 						z-index 10
 						margin-top 0
 					.inner-section-title
+						display block
 						padding-left 5%
 						margin-top -100px
 						height 100px
 						img
 							width 300px
+					.map-info-container
+						vertical-align middle
+						.place-map
+							width 41%
+							display inline-block
+							img
+								width 90%
+								height auto
+						.info
+							width 54%
+							display inline-block
+							font-size 1.2em
+							.view-more
+								float left
+			.find-branches
+				background-color transparent
+				text-align left
+				padding-left 37%
+				a
+					width 54%
+					background azulClaro
+					padding 10px 40px
+					border-radius 4px
+					bottom 55px
+					position relative
+		.newsletter
+			.title
+				width 70%
+			form
+				width 420px
+		/*
+		Business branches
+		*/
+		.container-fluid
+			figure
+				img
+					margin-left -15%
+					width 130%
+		.all-content
+			padding-bottom 20px
+			padding-top 20px
+			.find-branches
+				width 50%
+				margin 30px auto
+		.branches-container
+			.col
+				width 46.5%
+				display inline-block
+				position relative
+				margin-right 3%
+				figure
+					padding 0
+					margin 0
+					&.logo
+						width 50%
+						position absolute
+						top 50%
+						left 50%
+						margin-left -25%
+						margin-top -20%
+					img
+						width 100%
+						height auto
+		
+		/*Festeja con nosotros*/
+		.festeja-con-nosotros
+			.title-with-shadow
+				top initial
+				bottom 15px
+			.container-fluid figure img
+				width 110%
+				margin-left -5%
+			.packs-container
+				.pack
+					width 49%
+					display inline-block
+					&:nth-child(odd)
+						margin-right 1.5%
+					.place-logo
+						text-align center
+						margin-bottom 20px
+					.place-title
+						font-size 1.5em
+					.price
+						text-align center
+						span
+							font-size 4em
+		/*
+		Sucursales
+		*/
+		.sucursales
+			.place
+				background-color transparent
+				border none
+				display inline-block
+				margin 20px 3% 20px 0
+				width 30%
+				.title
+					font-size 1.4em
+		/*Joint to the team @768px*/
+		#joinForm
+		#contactForm
+			width 400px
+			margin 30px auto
+@media screen and (min-width:1000px)
+	.sucursales
+		.container.all-content
+			text-align center
+		.form-group
+			width 300px
+			display inline-block
+			margin 20px 30px 40px 0
+		.styled-select select
+			width 290px
+		.styled-select
+			width 300px
+	body
+		.navbar-nav
+			ul
+				li
+					font-size 1.4em
+					margin-right 12px
+		.main-banner
+			height 580px
+			.item
+				height 580px
+				position relative
+				img
+					width 1200px
+					margin-left -600px
+					position absolute
+					bottom 5px
+					left 50%
+					float none
+		.near-location
+			background transparent url(./images/pin-cercano.jpg) no-repeat left center
+			color white
+			display inline-block
+			padding-left 40px
+			position absolute
+			right 3%
+			top 13px
+		.brands
+			.block-unity
+				margin-top -100px
+		.promos-banner
+			.item
+				margin 0 auto
+				padding-bottom 40px
+				width 1000px
+				.title
+					text-align left
+					position relative
+					z-index 2
+					img
+						height auto
+						width 50%
+				.top
+					display block
+					height 600px
+					margin-top -130px
+					overflow hidden
+					ul
+						display block
+						overflow hidden
+						padding 0
+						li
+							display inline-block
+							overflow hidden
+							position absolute
+							img
+								height auto
+								margin-left 0
+								width 100%
+				.bottom
+					margin-top -130px
+					.slogan
+						font-size 5em
+						text-align center
+						span
+							text-shadow 4px 0 0 azul, -2px 0 0 azul, 0 2px 0 azul, 0 -2px 0 azul, 2px 2px azul, -2px -2px 0 azul, 2px -2px 0 azul, -2px 2px 0 azul
+					p
+						font-size 1.5em
+		.place
+			padding-bottom 20px
+			.place-carousel
+				.item
+					.image
+						width 70%
+						float left
+						overflow hidden
+						img
+							width 130%
+					.title
+						width 70%
+					.map-info-container
+						padding-top 0
+						width 30%
+						float right
+						.place-map
+							width 100%
+							display inline-block
+							img
+								width 100%
+								height auto
+						.info
+							width 54%
+							display inline-block
+							font-size 1.2em
+							padding-left 10px
+							padding-top 30px
+							.view-more
+								float left
+			.find-branches
+				background-color transparent
+				display block
+				height 65px
+				overflow hidden
+				padding 0
+				position relative
+				text-align center
+				width 100%
+				margin 0 auto
+				a
+					bottom 0
+					top 30px
+		.newsletter
+			.title
+				width 50%
+		/*
+		Business branches
+		*/
+		.container-fluid
+			figure
+				img
+					margin-left -2%
+					width 104%
+			.inner-logo
+				margin-top -85px
+		/*
+		Sucursales
+		*/
+		.sucursales
+			.place
+				margin 20px 4.5% 20px 0
+				width 30%
+				&.last
+					margin-right 0
+				.title
+					font-size 1.4em
+@media screen and (min-width:1280px)
+	body
+		.near-location
+			right 10%
+		.newsletter
+			.title
+				width 35%

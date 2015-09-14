@@ -39,7 +39,7 @@
 		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>
 
-	<div class="place">
+	<div class="place last">
 		<div class="title"><a href="#">Gran Terraza Belenes</a></div>
 		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>
@@ -57,7 +57,7 @@
 		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>
 
-	<div class="place">
+	<div class="place last">
 		<div class="title"><a href="#">Gran Terraza Belenes</a></div>
 		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>

@@ -39,6 +39,7 @@
 			<div id="navbar" class="navbar-collapse collapse">
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav navbar-nav', 'menu_id' => 'primary-menu' ) ); ?>
 			</div>
+			<div class="near-location">Sucursal más cercana <br>Plaza Lomas</div>
 		</div>
 	</nav>
 
