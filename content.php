@@ -10,16 +10,16 @@
 
 	<div class="branches-container <?php echo $post->post_name; ?>">
 		<div class="col bowl">
-			<figure><a href="#"><img src="/wp-content/themes/galex/images/galex-bowl-color.jpg" alt="Galex Bowl"></a></figure>
-			<figure class="logo"><a href="#"><img src="/wp-content/themes/galex/images/logo-galex-bowl.png" alt="Logo Galex Bowl"></a></figure>
+			<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-bowl-color.jpg" alt="Galex Bowl"></a></figure>
+			<figure class="logo"><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex-bowl.png" alt="Logo Galex Bowl"></a></figure>
 		</div>
 		<div class="col diversiones">
-			<figure><a href="#"><img src="/wp-content/themes/galex/images/galex-diversiones-color.jpg" alt="Diversiones Galex"></a></figure>
-			<figure class="logo"><a href="#"><img src="/wp-content/themes/galex/images/logo-galex.png" alt="Logo Diversiones Galex"></a></figure>
+			<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-diversiones-color.jpg" alt="Diversiones Galex"></a></figure>
+			<figure class="logo"><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex.png" alt="Logo Diversiones Galex"></a></figure>
 		</div>
 		<div class="col kids">
-			<figure><a href="#"><img src="/wp-content/themes/galex/images/galex-kids-color.jpg" alt="Galex Kids "></a></figure>
-			<figure class="logo"><a href="#"><img src="/wp-content/themes/galex/images/kids.png" alt="Logo Galex Kids "></a></figure>
+			<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-kids-color.jpg" alt="Galex Kids "></a></figure>
+			<figure class="logo"><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/kids.png" alt="Logo Galex Kids "></a></figure>
 		</div>
 	</div>
 </div>

@@ -31,17 +31,17 @@
 
 	<div class="place">
 		<div class="title"><a href="#">Gran Terraza Belenes</a></div>
-		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
+		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>
 
 	<div class="place">
 		<div class="title"><a href="#">Gran Terraza Belenes</a></div>
-		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
+		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>
 
 	<div class="place last">
 		<div class="title"><a href="#">Gran Terraza Belenes</a></div>
-		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
+		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>
 
 	<div class="party-title"><span>Galex Kids</span></div>
@@ -49,17 +49,17 @@
 
 	<div class="place">
 		<div class="title"><a href="#">Plaza caracol</a></div>
-		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
+		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>
 
 	<div class="place">
 		<div class="title"><a href="#">GRan Patio Patria</a></div>
-		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
+		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>
 
 	<div class="place last">
 		<div class="title"><a href="#">Gran Terraza Belenes</a></div>
-		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
+		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>
 
 	<div class="party-title"><span>Galex Bowl</span></div>
@@ -67,7 +67,7 @@
 	
 	<div class="place">
 		<div class="title"><a href="#">Plaza Caracol</a></div>
-		<figure><a href="#"><img src="/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
+		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
 	</div>
 	
 

@@ -12,7 +12,7 @@
 
 	<div class="packs-container">
 		<div class="pack">
-			<div class="place-logo"><img src="/wp-content/themes/galex/images/kids.png" alt="logo galex"></div>
+			<div class="place-logo"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/kids.png" alt="logo galex"></div>
 			<div class="place-title">Centro Magno / Guadalajara</div>
 			<p>
 				Incluye: <br>
@@ -37,7 +37,7 @@
 		</div>
 		
 		<div class="pack">
-			<div class="place-logo"><img src="/wp-content/themes/galex/images/kids.png" alt="logo galex"></div>
+			<div class="place-logo"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/kids.png" alt="logo galex"></div>
 			<div class="place-title">Plaza Caracol / Puerto Vallarta</div>
 			<p>
 				Incluye: <br>
@@ -61,7 +61,7 @@
 		</div>
 		
 		<div class="pack">
-			<div class="place-logo"><img src="/wp-content/themes/galex/images/logo-galex-bowl.png" alt="logo galex bowl"></div>
+			<div class="place-logo"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex-bowl.png" alt="logo galex bowl"></div>
 			<div class="place-title">Plaza Caracol / Puerto Vallarta</div>
 			<p>
 				Incluye: <br>
@@ -86,7 +86,7 @@
 		</div>
 
 		<div class="pack">
-			<div class="place-logo"><img src="/wp-content/themes/galex/images/logo-galex.png" alt="logo galex"></div>
+			<div class="place-logo"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex.png" alt="logo galex"></div>
 			<div class="place-title">Plaza Caracol / Puerto Vallarta</div>
 			<p>
 				Incluye: <br>
@@ -116,7 +116,7 @@
 
 	<div class="packs-container">
 		<div class="pack">
-			<div class="place-logo"><img src="/wp-content/themes/galex/images/logo-galex-bowl.png" alt="logo galex bowl"></div>
+			<div class="place-logo"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex-bowl.png" alt="logo galex bowl"></div>
 			<div class="place-title">Plaza Caracol / Puerto Vallarta</div>
 			<p>
 				Incluye: <br>

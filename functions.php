@@ -15,3 +15,11 @@ register_nav_menus( array(
 ) );
 
 add_theme_support( 'post-thumbnails', array( 'page' ) );
+
+function destino_final($host){
+  $extra = "";
+  if ($host != 'galex.dev') {
+    $extra = "/galex";
+  }
+  return $extra;
+}
