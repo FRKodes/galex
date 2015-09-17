@@ -15,6 +15,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
 			<div class="logo-footer"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex.png" alt="logo diversiones galex"></div>
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav navbar-nav', 'menu_id' => 'primary-menu' ) ); ?>
 			<ul class="social-links">
 				<li><a target="_blank" class="icon-fb" href="https://www.facebook.com/DiversionesGalex"></a></li>
 				<li><a target="_blank" class="icon-ig" href="https://instagram.com/diversionesgalex/"></a></li>

@@ -58,6 +58,7 @@ body
 		overflow visible
 		.navbar-header
 			overflow visible
+			height 70px
 			.navbar-toggle
 				border-color transparent
 				margin-top 14px
@@ -75,10 +76,42 @@ body
 				margin 12px 0 0 10px
 				position relative
 				width 110px
+				z-index 2
 				&:hover
 				&:focus
 				&:active
 					color transparent
+		.navbar-collapse
+			background-color azul
+			border-color transparent
+			position absolute
+			text-transform uppercase
+			width 100%
+			z-index 1
+			.navbar-nav
+				ul
+					list-style none
+					li
+						margin-bottom 10px
+						font-size 1.2em
+						a
+							color white
+			.social-links-mobile
+				padding 0
+				text-align center
+				li
+					display inline-block
+					margin-left 10px
+					background-color rojo
+					height 32px
+					width 30px
+					a
+						color white
+						font-size 2em
+						&:hover
+						&:focus
+						&:active
+							text-decoration none
 	.near-location
 		display none
 	.main-banner
@@ -380,6 +413,16 @@ body
 				display block
 				height auto
 				width 100%
+		.navbar-nav
+			display none
+			ul
+				text-align center
+				padding 0
+				li
+					display inline-block
+					text-transform uppercase
+					a
+						color white
 		.social-links
 			margin 0
 			padding 0
