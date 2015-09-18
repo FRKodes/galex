@@ -94,6 +94,8 @@ body
 					li
 						margin-bottom 10px
 						font-size 1.2em
+						&.page-item-6
+							display none
 						a
 							color white
 			.social-links-mobile
@@ -290,6 +292,8 @@ body
 			border-bottom 6px solid rojo
 			padding 10px 0
 			text-align center
+			img
+				margin-top -80px
 			&.galex-kids
 				background-color #EA098D
 			&.galex-bowl
@@ -401,6 +405,19 @@ body
 					display block
 					height auto
 					width 100%
+	/*
+	Promociones
+	*/
+	.promo-block
+		margin-bottom 40px
+		figure
+			margin 0 0 10px 0
+			overflow hidden
+			padding 0
+			img
+				display block
+				height auto
+				width 100%
 	.site-footer
 		background-color azul
 		overflow hidden
@@ -523,19 +540,31 @@ body
 			margin 0 auto
 			width 400px
 	body
-		.navbar-nav
-			ul
-				padding 18px 0
+		.navbar-default
+			.navbar-collapse
+				right 0
+				width 630px
+				height 70px
 				text-align right
-				li
-					display inline-block
-					margin-left 3px
-					font-size 1.2em
+				.navbar-nav
+					float right
 					margin-right 10px
-					&:last-of-type
-						margin-right 0
-					a
-						color white
+					ul
+						padding 0
+						text-align right
+						margin-bottom 0
+						height 67px
+						li
+							display inline-block
+							margin-left 3px
+							font-size 1em
+							margin-right 10px
+							&:last-of-type
+								margin-right 0
+							a
+								color white
+				.social-links-mobile
+					display none
 		.main-banner
 			.item
 				img
@@ -665,6 +694,9 @@ body
 		#contactForm
 			width 400px
 			margin 30px auto
+		.site-footer
+			.navbar-nav
+				display block
 @media screen and (min-width:1000px)
 	.sucursales
 		.container.all-content
@@ -678,11 +710,30 @@ body
 		.styled-select
 			width 300px
 	body
-		.navbar-nav
-			ul
-				li
-					font-size 1.4em
-					margin-right 12px
+		.navbar-default
+			.navbar-collapse
+				right initial
+				position relative
+				width 800px
+				height auto
+				text-align right
+				border 1px solid green
+				.navbar-nav
+					float right
+					margin-right 10px
+					ul
+						padding 0
+						text-align right
+						margin-bottom 0
+						li
+							display inline-block
+							margin-left 3px
+							font-size 1em
+							margin-right 10px
+							&:last-of-type
+								margin-right 0
+							a
+								color white
 		.main-banner
 			height 580px
 			.item
@@ -811,6 +862,24 @@ body
 					margin-right 0
 				.title
 					font-size 1.4em
+		/*
+		Promociones
+		*/
+		.promos-container
+			text-align center
+			.promo-block
+				vertical-align top
+				width 30%
+				margin-left 2%
+				display inline-block
+				figure
+					margin 0 0 10px 0
+					overflow hidden
+					padding 0
+					img
+						display block
+						height auto
+						width 100%
 @media screen and (min-width:1280px)
 	body
 		.near-location

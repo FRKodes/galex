@@ -14,7 +14,28 @@ register_nav_menus( array(
 	'main_menu' => 'Menu principal',
 ) );
 
-add_theme_support( 'post-thumbnails', array( 'page' ) );
+add_theme_support( 'post-thumbnails', array( 'page', 'promocion' ) );
+
+add_action( 'init', 'create_promo_post_type' );
+
+function create_promo_post_type() {
+  register_post_type( 'promocion',
+    array(
+      'labels' => array(
+        'name' => __( 'Promociones' ),
+        'singular_name' => __( 'Promoción' )
+      ),
+      'public' => true,
+      'has_archive' => false,
+      'supports' => array(
+          'title',
+          'editor',
+          'revisions',
+          'thumbnail',
+          )
+    )
+  );
+}
 
 function destino_final($host){
   $extra = "";

@@ -4,22 +4,13 @@
 </div>
 
 <div class="container all-content">
-	<?php the_content(); ?>
-
-	<div class="find-branches"><a href="#">Encuentra sucursales de Diversiones Galex</a></div>
-
-	<div class="branches-container <?php echo $post->post_name; ?>">
-		<div class="col bowl">
-			<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-bowl-color.jpg" alt="Galex Bowl"></a></figure>
-			<figure class="logo"><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex-bowl.png" alt="Logo Galex Bowl"></a></figure>
-		</div>
-		<div class="col diversiones">
-			<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-diversiones-color.jpg" alt="Diversiones Galex"></a></figure>
-			<figure class="logo"><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex.png" alt="Logo Diversiones Galex"></a></figure>
-		</div>
-		<div class="col kids">
-			<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-kids-color.jpg" alt="Galex Kids "></a></figure>
-			<figure class="logo"><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/kids.png" alt="Logo Galex Kids "></a></figure>
-		</div>
+	<div class="branches-container <?php echo $post->post_name; ?> hidden-xs">
+		<div class="col bowl"><figure><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-bowl-color.jpg" alt="Galex Bowl"></figure></div>
+		<div class="col diversiones"><figure><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-diversiones-color.jpg" alt="Diversiones Galex"></figure></div>
+		<div class="col kids"><figure><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-kids-color.jpg" alt="Galex Kids "></figure></div>
 	</div>
+	<div class="col-xs-12">
+		<?php the_content(); ?>
+	</div>
+
 </div>
