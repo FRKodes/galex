@@ -33,7 +33,7 @@ gulp.task('scripts', function() {
 });
 
 gulp.task('watch', function() {
-	gulp.watch('./css/main.styl', ['compress', 'concat', 'scripts']);
+	gulp.watch(['./css/main.styl', './js/z-custom.js'], ['compress', 'concat', 'scripts']);
 });
 
 // Default gulp task to run

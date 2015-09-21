@@ -1,4 +1,5 @@
-<div class="container-fluid"><figure> <?php the_post_thumbnail('full'); ?></figure></div>
+<?php include('top-image.php'); ?>
+
 <div class="container all-content">
 	<?php the_content();
 	if ($post->post_name == "contacto") {

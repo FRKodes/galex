@@ -34,10 +34,12 @@
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 				</button>
-				<a class="navbar-brand" href="/galex"><span> Galex Diversiones </span> </a>
+				<a class="navbar-brand" href="/"><span> Galex Diversiones </span> </a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
+				
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class' => 'nav navbar-nav', 'menu_id' => 'primary-menu' ) ); ?>
+
 				<ul class="social-links-mobile">
 					<li><a class="icon-fb" target="_blank" href="https://www.facebook.com/DiversionesGalex"></a></li>
 					<li><a class="icon-ig" target="_blank" href="https://instagram.com/diversionesgalex/"></a></li>

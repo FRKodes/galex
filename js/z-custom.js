@@ -13,4 +13,24 @@ $( document ).ready(function() {
     $('ul.sub-menu').addClass('dropdown-menu').removeClass('sub-menu');
 
     $('.main-banner').slick();
+
+    $('.promos-banner').slick();
+
+    $('.block-unity').hover(
+        function() {
+            var original_url = $( this ).find('.back-image').attr('src').replace('.jpg', '');
+            $( this ).find('.back-image').attr('src', original_url + '-color.jpg')
+        }, function() {
+            var original_url = $( this ).find('.back-image').attr('src').replace('-color', '');
+            $( this ).find('.back-image').attr('src', original_url)
+        }
+    );
+    
+    $('.navbar-nav ul li').hover(
+        function() {
+            $( this ).addClass( "mousehover" );
+        }, function() {
+            $( this ).removeClass( "mousehover" );
+        }
+    );
 });

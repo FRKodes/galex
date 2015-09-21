@@ -1,0 +1,2 @@
+<div class="item"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/fam.png" alt=""></div>
+<div class="item"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/belenes.jpg" alt=""></div>

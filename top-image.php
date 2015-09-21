@@ -1,0 +1,1 @@
+<div class="container-fluid top-image"><figure><?php the_post_thumbnail('full'); ?></figure></div>
