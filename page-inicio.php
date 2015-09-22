@@ -66,8 +66,8 @@ get_header(); ?>
 
 			<div class="newsletter">
 				<div class="title"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/newslletter.png" alt="newslletter image"></div>
-				<form action="" method="post">
-					<div class="form-group"><input type="text" placeholder="Correo electrónico" name="email" class="form-control"></div>
+				<form action="" method="post" id="newsLetter">
+					<div class="form-group"><input type="text" placeholder="Correo electrónico" name="email" class="form-control" data-validate="required|email"></div>
 					<div class="submit-line"><input type="submit" value="Suscribirme!" class="btn btn-primary"></div>
 				</form>
 			</div>

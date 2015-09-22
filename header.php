@@ -47,6 +47,11 @@
 				</ul>
 			</div>
 			<div class="near-location">Sucursal más cercana <br>Plaza Lomas</div>
+			<ul class="social-links-top">
+				<li><a target="_blank" href="https://www.facebook.com/DiversionesGalex" class="icon-fb"></a></li>
+				<li><a target="_blank" href="https://instagram.com/diversionesgalex/" class="icon-ig"></a></li>
+				<li><a target="_blank" href="#" class="icon-yt"></a></li>
+			</ul>
 		</div>
 	</nav>
 

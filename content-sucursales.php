@@ -31,96 +31,71 @@
 	
 	<div class="party-title"><span>Diversiones Galex</span></div>
 	<hr>
-
-	<div class="place">
-		<div class="title"><a href="#">Gran Terraza Belenes</a></div>
-		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
-		<div class="info hidden-xs hidden-sm">
-			<div class="address">Av. Río Nilo 333-23, Plaza Lomas.</div>
-			<div class="city">Tlaquepaque Jalisco.</div>
-			<div class="phone">Tels: 3334 4567</div>
-			<div class="schedule">Lunes a Domingo 11:00 - 22:00 Hrs.</div>
-			<div class="view-more"><a href="#">Ver más detalles</a></div>
-		</div>
-	</div>
-
-	<div class="place">
-		<div class="title"><a href="#">Gran Terraza Belenes</a></div>
-		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
-		<div class="info hidden-xs hidden-sm">
-			<div class="address">Av. Río Nilo 333-23, Plaza Lomas.</div>
-			<div class="city">Tlaquepaque Jalisco.</div>
-			<div class="phone">Tels: 3334 4567</div>
-			<div class="schedule">Lunes a Domingo 11:00 - 22:00 Hrs.</div>
-			<div class="view-more"><a href="#">Ver más detalles</a></div>
-		</div>
-	</div>
-
-	<div class="place last">
-		<div class="title"><a href="#">Gran Terraza Belenes</a></div>
-		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
-		<div class="info hidden-xs hidden-sm">
-			<div class="address">Av. Río Nilo 333-23, Plaza Lomas.</div>
-			<div class="city">Tlaquepaque Jalisco.</div>
-			<div class="phone">Tels: 3334 4567</div>
-			<div class="schedule">Lunes a Domingo 11:00 - 22:00 Hrs.</div>
-			<div class="view-more"><a href="#">Ver más detalles</a></div>
-		</div>
-	</div>
+	<?php
+	$my_query = new WP_Query('post_type=sucursal&unidad=diversiones');
+	$cont = 0;
+	while ($my_query->have_posts()) : $my_query->the_post();
+		$cont++;
+		$last = ($cont%3 == 0) ? 'last' : '' ;?>
+		<div class="place <?php echo $last; ?>">
+			<div class="title"><a href="#"><?php the_title() ?></a></div>
+			<figure><a href="#"><?php the_post_thumbnail() ?></a></figure>
+			<div class="info hidden-xs hidden-sm">
+				<div class="address"><?php the_field('direccion') ?></div>
+				<!-- <div class="city">Tlaquepaque Jalisco.</div> -->
+				<div class="phone">Tels: <?php the_field('telefono') ?></div>
+				<div class="schedule"><?php the_field('horario') ?></div>
+				<div class="unity"><img src="<?php the_field('logo_unidad') ?>" alt="<?php the_title() ?>"></div>
+				<div class="view-more"><a href="#">Ver más detalles</a></div>
+			</div>
+		</div><?php 
+	endwhile;  wp_reset_query(); ?>
 
 	<div class="party-title"><span>Galex Kids</span></div>
 	<hr>
 
-	<div class="place">
-		<div class="title"><a href="#">Plaza caracol</a></div>
-		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
-		<div class="info hidden-xs hidden-sm">
-			<div class="address">Av. Río Nilo 333-23, Plaza Lomas.</div>
-			<div class="city">Tlaquepaque Jalisco.</div>
-			<div class="phone">Tels: 3334 4567</div>
-			<div class="schedule">Lunes a Domingo 11:00 - 22:00 Hrs.</div>
-			<div class="view-more"><a href="#">Ver más detalles</a></div>
-		</div>
-	</div>
-
-	<div class="place">
-		<div class="title"><a href="#">GRan Patio Patria</a></div>
-		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
-		<div class="info hidden-xs hidden-sm">
-			<div class="address">Av. Río Nilo 333-23, Plaza Lomas.</div>
-			<div class="city">Tlaquepaque Jalisco.</div>
-			<div class="phone">Tels: 3334 4567</div>
-			<div class="schedule">Lunes a Domingo 11:00 - 22:00 Hrs.</div>
-			<div class="view-more"><a href="#">Ver más detalles</a></div>
-		</div>
-	</div>
-
-	<div class="place last">
-		<div class="title"><a href="#">Gran Terraza Belenes</a></div>
-		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
-		<div class="info hidden-xs hidden-sm">
-			<div class="address">Av. Río Nilo 333-23, Plaza Lomas.</div>
-			<div class="city">Tlaquepaque Jalisco.</div>
-			<div class="phone">Tels: 3334 4567</div>
-			<div class="schedule">Lunes a Domingo 11:00 - 22:00 Hrs.</div>
-			<div class="view-more"><a href="#">Ver más detalles</a></div>
-		</div>
-	</div>
+	<?php
+	$my_query = new WP_Query('post_type=sucursal&unidad=kids');
+	$cont = 0;
+	while ($my_query->have_posts()) : $my_query->the_post();
+		$cont++;
+		$last = ($cont%3 == 0) ? 'last' : '' ;?>
+		<div class="place <?php echo $last; ?>">
+			<div class="title"><a href="#"><?php the_title() ?></a></div>
+			<figure><a href="#"><?php the_post_thumbnail() ?></a></figure>
+			<div class="info hidden-xs hidden-sm">
+				<div class="address"><?php the_field('direccion') ?></div>
+				<!-- <div class="city">Tlaquepaque Jalisco.</div> -->
+				<div class="phone">Tels: <?php the_field('telefono') ?></div>
+				<div class="schedule"><?php the_field('horario') ?></div>
+				<div class="unity"><img src="<?php the_field('logo_unidad') ?>" alt="<?php the_title() ?>"></div>
+				<div class="view-more"><a href="#">Ver más detalles</a></div>
+			</div>
+		</div><?php 
+	endwhile;  wp_reset_query(); ?>
 
 	<div class="party-title"><span>Galex Bowl</span></div>
 	<hr>
 	
-	<div class="place">
-		<div class="title"><a href="#">Plaza Caracol</a></div>
-		<figure><a href="#"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/plaza-lomas.jpg" alt="plaza lomas"></a></figure>
-		<div class="info hidden-xs hidden-sm">
-			<div class="address">Av. Río Nilo 333-23, Plaza Lomas.</div>
-			<div class="city">Tlaquepaque Jalisco.</div>
-			<div class="phone">Tels: 3334 4567</div>
-			<div class="schedule">Lunes a Domingo 11:00 - 22:00 Hrs.</div>
-			<div class="view-more"><a href="#">Ver más detalles</a></div>
-		</div>
-	</div>
+	<?php
+	$my_query = new WP_Query('post_type=sucursal&unidad=bowl');
+	$cont = 0;
+	while ($my_query->have_posts()) : $my_query->the_post();
+		$cont++;
+		$last = ($cont%3 == 0) ? 'last' : '' ;?>
+		<div class="place <?php echo $last; ?>">
+			<div class="title"><a href="#"><?php the_title() ?></a></div>
+			<figure><a href="#"><?php the_post_thumbnail() ?></a></figure>
+			<div class="info hidden-xs hidden-sm">
+				<div class="address"><?php the_field('direccion') ?></div>
+				<!-- <div class="city">Tlaquepaque Jalisco.</div> -->
+				<div class="phone">Tels: <?php the_field('telefono') ?></div>
+				<div class="schedule"><?php the_field('horario') ?></div>
+				<div class="unity"><img src="<?php the_field('logo_unidad') ?>" alt="<?php the_title() ?>"></div>
+				<div class="view-more"><a href="#">Ver más detalles</a></div>
+			</div>
+		</div><?php 
+	endwhile;  wp_reset_query(); ?>
 	
 
 </div>
