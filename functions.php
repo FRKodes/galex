@@ -12,6 +12,7 @@ register_nav_menus( array(
 	'main_menu' => 'Menu principal',
 ) );
 
+add_theme_support( 'page-template', array( 'page' ) );
 add_theme_support( 'post-thumbnails', array( 'page', 'promocion', 'sucursal' ) );
 
 add_action( 'init', 'create_promo_post_type' );
@@ -28,7 +29,6 @@ function create_promo_post_type() {
 			'supports' => array(
 					'title',
 					'editor',
-					'revisions',
 					'thumbnail',
 					)
 		)
@@ -45,14 +45,14 @@ function create_sucursal_post_type() {
 				'singular_name' => __( 'Sucursal' )
 			),
 			'public' => true,
-			'has_archive' => false,
+			'has_archive' => true,
 			'supports' => array(
 					'title',
-					'revisions',
 					'thumbnail',
 					)
 		)
 	);
+	flush_rewrite_rules();
 }
 
 add_action( 'init', 'create_sucursal_taxonomies', 0 );

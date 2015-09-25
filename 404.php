@@ -16,7 +16,7 @@ get_header(); ?>
 				<header class="page-header">
 					<h1 class="page-title">
 						<?php //_e( 'Oops! That page can&rsquo;t be found.', 'twentyfifteen' ); ?>
-						Not found on Galex
+						Página no encontrada en el sitio de Galex :(
 					</h1>
 				</header><!-- .page-header -->
 
@@ -24,7 +24,7 @@ get_header(); ?>
 					
 					<p>
 						<?php //_e( 'It looks like nothing was found at this location. Maybe try a search?', 'twentyfifteen' ); ?>
-						Not found on Galex... Sorry
+						Lo sentimos, la página que buscas no se encuentra disponible :/
 					</p>
 
 					<?php get_search_form(); ?>

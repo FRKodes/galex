@@ -104,6 +104,12 @@ $( document ).ready(function() {
 
     $('.promos-banner').slick();
 
+    $('.detail-carousel').slick({
+        autoplay: true
+    });
+
+
+
     $('.block-unity').hover(
         function() {
             var original_url = $( this ).find('.back-image').attr('src').replace('.jpg', '');
