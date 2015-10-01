@@ -1,2 +1,3 @@
-<div class="item"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/fam.png" alt=""></div>
-<div class="item"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/belenes.jpg" alt=""></div>
+<div class="item uno"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/banner01.png" alt=""></div>
+<div class="item dos"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/kids2x1.png" alt=""></div>
+<div class="item tres"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/sanFernando.png" alt=""></div>

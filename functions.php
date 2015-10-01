@@ -93,3 +93,10 @@ function destino_final($host){
 	}
 	return $extra;
 }
+function img_path($host){
+	$extra = "/wp-content/themes/galex/images/";
+	if ($host != 'galex.dev') {
+		$extra = "/galex/wp-content/themes/promometros/images/";
+	}
+	return $extra;
+}

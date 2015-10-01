@@ -34,7 +34,24 @@ $( document ).ready(function() {
         autoplay: true
     });
 
+    $('a.show-more').on('click', function (){
+        var target = $(this).attr('data-target');
+        $('.place.' + target).removeClass('hidden');
+        $(this).addClass('hidden');
+    });
 
+    $('select#estado').change(function (){
+        var current = $(this).val().toLowerCase();
+        console.log(current);
+        $('.place').addClass('hidden');
+        $('.place.'+ current).toggleClass('hidden');
+        $('a.show-more').addClass('hidden');
+
+        if (current == 'todo') {
+            $('.place').removeClass('hidden');
+        };
+
+    });
 
     $('.block-unity').hover(
         function() {
@@ -53,6 +70,13 @@ $( document ).ready(function() {
             $( this ).removeClass( "mousehover" );
         }
     );
+
+});
+
+$(document).ready(function(){
+    $('.parallax-layer').parallax({
+        mouseport: $("#scene1")
+    });
 });
 
 /* validator */

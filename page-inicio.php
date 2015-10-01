@@ -33,8 +33,10 @@ get_header(); ?>
 					</div>
 				</div>
 			</div>
-
-			<div class="promos-banner"><?php include('banners-promos.php'); ?></div>
+			
+			<div class="container-fluid promos-banner-container">
+				<div class="promos-banner"><?php include('banners-promos.php'); ?></div>
+			</div>
 
 			<div class="place">
 
@@ -61,7 +63,7 @@ get_header(); ?>
 					</div>
 				</div>
 
-				<div class="find-branches"><a href="#">Encuentra más sucursales</a></div>
+				<div class="find-branches"><a href="<?php echo get_permalink ( 37 ) ?>">Encuentra más sucursales</a></div>
 			</div>
 
 			<div class="newsletter">
