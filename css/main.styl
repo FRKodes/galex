@@ -15,6 +15,8 @@ amarillo = #FFC600
 		border 2px solid rojo
 .btn.btn-primary:focus
 	outline 0
+#showNearLocation
+	display nonep
 .styled-select select
 	background transparent
 	width 100%
@@ -145,6 +147,9 @@ body
 						text-decoration none
 	.near-location
 		display none
+		a
+			color white
+			text-decoration none
 	.main-banner
 		border-bottom 5px solid rojo
 		height auto
@@ -984,13 +989,14 @@ body
 				img
 					width 800px
 		.near-location
-			background transparent url(./images/pin-cercano.jpg) no-repeat left center
 			color white
 			display inline-block
-			padding-left 40px
+			padding 10px 0 10px 40px
 			position absolute
-			right 3%
-			top 13px
+			right 1%
+			top 8px
+			&.background-pined
+				background transparent url(./images/pin-cercano.jpg) no-repeat left center
 		.brands
 			.block-unity
 				margin-top -100px

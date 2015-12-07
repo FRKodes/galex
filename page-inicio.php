@@ -37,11 +37,14 @@ get_header(); ?>
 			<div class="container-fluid promos-banner-container">
 				<div class="promos-banner"><?php include('banners-promos.php'); ?></div>
 			</div>
-
+			
+			<?php  
+			$queried_post = get_post(120);
+			$title = $queried_post->post_title;
+			echo $title;
+			?>
 			<div class="place">
-
 				<div class="place-container">
-					
 					<div class="section-title"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/cerca-mobile.png" alt="Galex cerca de tí"></div>
 					<div class="place-carousel">
 						<div class="item">
@@ -62,7 +65,6 @@ get_header(); ?>
 						</div>
 					</div>
 				</div>
-
 				<div class="find-branches"><a href="<?php echo get_permalink ( 37 ) ?>">Encuentra más sucursales</a></div>
 			</div>
 

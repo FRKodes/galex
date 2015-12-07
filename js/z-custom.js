@@ -1,8 +1,8 @@
 /*-------------------------------
-    VALIDATE.JS
-    A barebones jQuery validation plugin
-    @author Todd Francis
-    @version 1.0.3
+	VALIDATE.JS
+	A barebones jQuery validation plugin
+	@author Todd Francis
+	@version 1.0.3
 -------------------------------*/
 ;(function(r,d,l){d.fn.validate=function(m){return this.each(function(){var f=d(this);if(l===f.data("validate")){var j=new d.validate(m,f);f.data("validate",j)}})};d.validate=function(m,f){function j(a,b){-1==d.inArray(a,b)&&b.push(a);return b}function p(a){a=a.slice(a.indexOf("[")+1,-1);return-1!==a.indexOf(",")?a.split(","):[a]}function n(a){for(var b=[],c=0;c<a.length;c++){var g=a[c],d=[],h=g.indexOf("[");-1!==h&&(d=d.concat(p(g)),g=g.slice(0,h));b.push({rule:g,args:d})}return b}var h=d.extend(!0,
 {debug:!1,autoDetect:!1,visibleOnly:!0,beforeSubmit:function(){},singleError:function(){},overallError:function(){},singleSuccess:function(){},overallSuccess:function(){},regExp:{alpha:/^[a-zA-Z]*$/,numeric:/^[0-9]*$/,alphanumeric:/^[a-zA-Z0-9]*$/,url:/^(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?$/,email:/^[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+(?:\.[a-zA-Z0-9!#$%&'*+\/=?^_`{|}~-]+)*@(?:[a-zA-Z0-9](?:[a-zA-Z0-9\-]*[a-zA-Z0-9])?\.)+[a-zA-Z0-9](?:[a-zA-Z0-9-]*[a-zA-Z0-9])?$/}},
@@ -13,141 +13,250 @@ function(a){a=d("[data-validate]",a===l?c.$form:a);h.autoDetect&&(a=d("input[req
 b=RegExp(b,c);return a.val().match(b)?!0:!1};c.checkRegExp=function(a,b){return a.val().match(h.regExp[b])?!0:!1};c.checkMaxLength=function(a,b){return""===a.val()?!0:a.val().length<=b};c.checkMinLength=function(a,b){return""===a.val()?!0:a.val().length>=b};c.checkMax=function(a,b){return""===a.val()?!0:parseFloat(a.val())<=parseFloat(b)};c.checkMin=function(a,b){return""===a.val()?!0:parseFloat(a.val())>=parseFloat(b)}}})(window,jQuery);
 
 $( document ).ready(function() {
-    console.log( "ready!" );
-    $('.menu-menu-top-container').attr('id', 'navbar').addClass('navbar-collapse collapse');
-    $('.menu-item-has-children').addClass('dropdown');
-    $('.dropdown a:first, .dropdown-two a:first')
-    		.addClass('dropdown-toggle')
-    		.attr({
-    			href:"#", 
-    			'data-toggle':"dropdown", 
-    			role:"button"
-    		});
+	// console.log( "ready!" );
+	$('.menu-menu-top-container').attr('id', 'navbar').addClass('navbar-collapse collapse');
+	$('.menu-item-has-children').addClass('dropdown');
+	$('.dropdown a:first, .dropdown-two a:first')
+			.addClass('dropdown-toggle')
+			.attr({
+				href:"#", 
+				'data-toggle':"dropdown", 
+				role:"button"
+			});
 
-    $('ul.sub-menu').addClass('dropdown-menu').removeClass('sub-menu');
+	$('ul.sub-menu').addClass('dropdown-menu').removeClass('sub-menu');
 
-    $('.main-banner').slick();
+	$('.main-banner').slick();
 
-    $('.promos-banner').slick();
+	$('.promos-banner').slick();
 
-    $('.detail-carousel').slick({
-        autoplay: true
-    });
+	$('.detail-carousel').slick({
+		autoplay: true
+	});
 
-    $('a.show-more').on('click', function (){
-        var target = $(this).attr('data-target');
-        $('.place.' + target).removeClass('hidden');
-        $(this).addClass('hidden');
-    });
+	$('a.show-more').on('click', function (){
+		var target = $(this).attr('data-target');
+		$('.place.' + target).removeClass('hidden');
+		$(this).addClass('hidden');
+	});
 
-    $('select#estado').change(function (){
-        var current = $(this).val().toLowerCase();
-        console.log(current);
-        $('.place').addClass('hidden');
-        $('.place.'+ current).toggleClass('hidden');
-        $('a.show-more').addClass('hidden');
+	$('select#estado').change(function (){
+		var current = $(this).val().toLowerCase();
+		console.log(current);
+		$('.place').addClass('hidden');
+		$('.place.'+ current).toggleClass('hidden');
+		$('a.show-more').addClass('hidden');
 
-        if (current == 'todo') {
-            $('.place').removeClass('hidden');
-        };
+		if (current == 'todo') {
+			$('.place').removeClass('hidden');
+		};
 
-    });
+	});
 
-    $('.block-unity').hover(
-        function() {
-            var original_url = $( this ).find('.back-image').attr('src').replace('.jpg', '');
-            $( this ).find('.back-image').attr('src', original_url + '-color.jpg')
-        }, function() {
-            var original_url = $( this ).find('.back-image').attr('src').replace('-color', '');
-            $( this ).find('.back-image').attr('src', original_url)
-        }
-    );
-    
-    $('.navbar-nav ul li').hover(
-        function() {
-            $( this ).addClass( "mousehover" );
-        }, function() {
-            $( this ).removeClass( "mousehover" );
-        }
-    );
+	$('.block-unity').hover(
+		function() {
+			var original_url = $( this ).find('.back-image').attr('src').replace('.jpg', '');
+			$( this ).find('.back-image').attr('src', original_url + '-color.jpg')
+		}, function() {
+			var original_url = $( this ).find('.back-image').attr('src').replace('-color', '');
+			$( this ).find('.back-image').attr('src', original_url)
+		}
+	);
+	
+	$('.navbar-nav ul li').hover(
+		function() {
+			$( this ).addClass( "mousehover" );
+		}, function() {
+			$( this ).removeClass( "mousehover" );
+		}
+	);
 
 });
 
 $(document).ready(function(){
-    $('.parallax-layer').parallax({
-        mouseport: $("#scene1")
-    });
+	$('.parallax-layer').parallax({
+		mouseport: $("#scene1")
+	});
+});
+
+$(document).ready(function(){
+	if (navigator.geolocation) {
+		$('.near-location').html('<img src="/wp-content/themes/galex/images/loader.gif" width="30" height="30" alt="loader gif">');
+		var timeoutVal = 10 * 1000 * 1000;
+
+		navigator.geolocation.getCurrentPosition(
+			displayPosition, 
+			displayError,
+			{ 
+				enableHighAccuracy: true,
+				timeout: timeoutVal,
+				maximumAge: 0 
+			});
+	}else {
+		alert("Geolocation is not supported by this browser");
+	}
+
+	function toRad(num){
+		// if (typeof(Number.prototype.toRad) === "undefined") {
+		//   Number.prototype.toRad = function() {
+		//     return this * Math.PI / 180;
+		//   }
+		// }
+		// 	
+		return num * Math.PI / 180;
+	}
+	function displayPosition(position) {
+		/*
+		this was just testing stuff
+		 */
+		// alert("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
+		// $('.near-location').html("Lat: " + position.coords.latitude + ", Lng: " + position.coords.longitude);
+
+		var lat1 = position.coords.latitude;
+		var lon1 = position.coords.longitude;
+		var lat2 = 20.695466;
+		var lon2 = -103.373948;
+		// var distance = calculateDistance(lat1,lon1,lat2,lon2);
+		
+		// console.log(distance);
+
+
+		getLocations(lat1, lon1);
+	}
+
+	function getLocations(lat1, lon1){
+		var locations = JSON.parse($('input[name="locations"]').val());
+		var current_distance = 0;
+		console.log('Locations: ' + locations.length);
+
+		for (var i = 0; i < locations.length; i++) {
+			current_distance = calculateDistance(lat1,lon1,locations[i].lat,locations[i].lng);
+			if (current_distance < 3500) {
+				console.log('Distancia: ' + current_distance);
+				console.log(locations[i].title);
+				console.log('ID: ' + locations[i].id);
+				$('.near-location').addClass('background-pined').html('<a href="' + locations[i].link + '" title=" ' + locations[i].title  + ' ">Sucursal más cercana:<br>' + locations[i].title + '</a>');
+				$('input[name="featured"]').attr('value',locations[i].id);
+				$('#showNearLocation').trigger('click');
+			}else{
+				$('.near-location').html();
+			};
+		};
+	}
+
+	$( "#showNearLocation" ).on( "click", function() {
+		var urlAPI = $('input[name="featured"]').attr('data-url') + $('input[name="featured"]').attr('value');
+		console.log(urlAPI);
+
+		// $.getJSON( urlAPI, {
+		// 	tags: "mount rainier",
+		// 	tagmode: "any",
+		// 	format: "json"
+		// 	})
+		// 	.done(function( data ) {
+		// 		$.each( data.items, function( i, item ) {
+		// 			$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
+		// 			if ( i === 3 ) {
+		// 				return false;
+		// 			}
+		// 		});
+		// 	});
+		console.log('done');
+	});
+
+	function calculateDistance(lat1,lon1,lat2,lon2){
+		var R = 6371000; // metres
+		var φ1 = toRad(lat1);
+		var φ2 = toRad(lat2);
+		var Δφ = toRad(lat2-lat1);
+		var Δλ = toRad(lon2-lon1);
+		var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+		        Math.cos(φ1) * Math.cos(φ2) *
+		        Math.sin(Δλ/2) * Math.sin(Δλ/2);
+		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+		var d = R * c;
+		return parseInt(d);
+	}
+
+	function displayError(error) {
+		var errors = { 
+			1: 'Diversiones Galex necesita saber tu ubicación para mostrarte información especial basada en tu ubicación.',
+			2: 'Posición no disponible',
+			3: 'La solicitud tardó demasiado tiempo, intenta de nuevo más tarde.'
+		};
+		alert("Error: " + errors[error.code]);
+	}
 });
 
 /* validator */
 jQuery(function(){
-    var formSettings = {
-        singleError : function($field, rules){ $field.closest('.form-group').removeClass('valid').addClass('error');},
-        singleSuccess : function($field, rules){ $field.closest('.form-group').removeClass('error').addClass('valid'); },
-        overallSuccess : function(){
-            var form    = jQuery('#newsLetter'),
-                email   = form.find( "input[name='email']" ).val(),
-                action  = form.attr( "action"),
-                url     = action;
-            var posting = jQuery.post( 
-                url, { e: email }
-                );
-            posting.done(function( data ) {
-                console.log(data);
-                jQuery('#newsLetter')[0].reset();
-                jQuery('.sent_mail_alert').fadeIn().delay(2000).fadeOut();
-            });
-        },
-        overallError : function($form, fields){ /*Do nothing, just show the error fields*/ },
-        autoDetect : true, debug : true
-    };
-    var $validate = jQuery('#newsLetter').validate(formSettings).data('validate');
+	var formSettings = {
+		singleError : function($field, rules){ $field.closest('.form-group').removeClass('valid').addClass('error');},
+		singleSuccess : function($field, rules){ $field.closest('.form-group').removeClass('error').addClass('valid'); },
+		overallSuccess : function(){
+			var form    = jQuery('#newsLetter'),
+				email   = form.find( "input[name='email']" ).val(),
+				action  = form.attr( "action"),
+				url     = action;
+			var posting = jQuery.post( 
+				url, { e: email }
+				);
+			posting.done(function( data ) {
+				console.log(data);
+				jQuery('#newsLetter')[0].reset();
+				jQuery('.sent_mail_alert').fadeIn().delay(2000).fadeOut();
+			});
+		},
+		overallError : function($form, fields){ /*Do nothing, just show the error fields*/ },
+		autoDetect : true, debug : true
+	};
+	var $validate = jQuery('#newsLetter').validate(formSettings).data('validate');
 });
 /* validator */
 jQuery(function(){
-    var formSettings = {
-        singleError : function($field, rules){ $field.closest('.form-group').removeClass('valid').addClass('error');},
-        singleSuccess : function($field, rules){ $field.closest('.form-group').removeClass('error').addClass('valid'); },
-        overallSuccess : function(){
-            var form    = jQuery('#contactForm'),
-                email   = form.find( "input[name='email']" ).val(),
-                action  = form.attr( "action"),
-                url     = action;
-            var posting = jQuery.post( 
-                url, { e: email }
-                );
-            posting.done(function( data ) {
-                console.log(data);
-                jQuery('#contactForm')[0].reset();
-                jQuery('.sent_mail_alert').fadeIn().delay(2000).fadeOut();
-            });
-        },
-        overallError : function($form, fields){ /*Do nothing, just show the error fields*/ },
-        autoDetect : true, debug : true
-    };
-    var $validate = jQuery('#contactForm').validate(formSettings).data('validate');
+	var formSettings = {
+		singleError : function($field, rules){ $field.closest('.form-group').removeClass('valid').addClass('error');},
+		singleSuccess : function($field, rules){ $field.closest('.form-group').removeClass('error').addClass('valid'); },
+		overallSuccess : function(){
+			var form    = jQuery('#contactForm'),
+				email   = form.find( "input[name='email']" ).val(),
+				action  = form.attr( "action"),
+				url     = action;
+			var posting = jQuery.post( 
+				url, { e: email }
+				);
+			posting.done(function( data ) {
+				console.log(data);
+				jQuery('#contactForm')[0].reset();
+				jQuery('.sent_mail_alert').fadeIn().delay(2000).fadeOut();
+			});
+		},
+		overallError : function($form, fields){ /*Do nothing, just show the error fields*/ },
+		autoDetect : true, debug : true
+	};
+	var $validate = jQuery('#contactForm').validate(formSettings).data('validate');
 });
 /* validator */
 jQuery(function(){
-    var formSettings = {
-        singleError : function($field, rules){ $field.closest('.form-group').removeClass('valid').addClass('error');},
-        singleSuccess : function($field, rules){ $field.closest('.form-group').removeClass('error').addClass('valid'); },
-        overallSuccess : function(){
-            var form    = jQuery('#joinForm'),
-                email   = form.find( "input[name='email']" ).val(),
-                action  = form.attr( "action"),
-                url     = action;
-            var posting = jQuery.post( 
-                url, { e: email }
-                );
-            posting.done(function( data ) {
-                console.log(data);
-                jQuery('#joinForm')[0].reset();
-                jQuery('.sent_mail_alert').fadeIn().delay(2000).fadeOut();
-            });
-        },
-        overallError : function($form, fields){ /*Do nothing, just show the error fields*/ },
-        autoDetect : true, debug : true
-    };
-    var $validate = jQuery('#joinForm').validate(formSettings).data('validate');
+	var formSettings = {
+		singleError : function($field, rules){ $field.closest('.form-group').removeClass('valid').addClass('error');},
+		singleSuccess : function($field, rules){ $field.closest('.form-group').removeClass('error').addClass('valid'); },
+		overallSuccess : function(){
+			var form    = jQuery('#joinForm'),
+				email   = form.find( "input[name='email']" ).val(),
+				action  = form.attr( "action"),
+				url     = action;
+			var posting = jQuery.post( 
+				url, { e: email }
+				);
+			posting.done(function( data ) {
+				console.log(data);
+				jQuery('#joinForm')[0].reset();
+				jQuery('.sent_mail_alert').fadeIn().delay(2000).fadeOut();
+			});
+		},
+		overallError : function($form, fields){ /*Do nothing, just show the error fields*/ },
+		autoDetect : true, debug : true
+	};
+	var $validate = jQuery('#joinForm').validate(formSettings).data('validate');
 });

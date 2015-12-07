@@ -23,6 +23,25 @@
 			</ul>
 		</div><!-- .site-info -->
 	</footer><!-- .site-footer -->
+	
+	<?php
+	$i = 0;
+	$my_query = new WP_Query('post_type=sucursal');
+	while ($my_query->have_posts()) : $my_query->the_post();
+		
+		$locations[$i] = array('lat' => get_field('lat'),
+								'lng' => get_field('lng'),
+								'title' => get_the_title(),
+								'id' => get_the_ID(),
+								'link' => get_the_permalink()
+							);
+		$i++;
+
+	endwhile;  wp_reset_query(); ?>
+	
+	<input type="hidden" name="locations" value='<?php echo json_encode($locations); ?>'>
+	<input type="hidden" name="featured" data-url='<?php echo $_SERVER['HTTP_HOST'] ?>/featured/?id='>
+	<button id="showNearLocation"></button>
 
 </div><!-- .site -->
 
