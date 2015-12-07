@@ -39,9 +39,9 @@ get_header(); ?>
 			</div>
 			
 			<?php  
-			$queried_post = get_post(120);
-			$title = $queried_post->post_title;
-			echo $title;
+			// $queried_post = get_post(120);
+			// $title = $queried_post->post_title;
+			// echo $title;
 			?>
 			<div class="place">
 				<div class="place-container">
