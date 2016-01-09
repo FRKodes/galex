@@ -26,12 +26,20 @@ $( document ).ready(function() {
 
 	$('ul.sub-menu').addClass('dropdown-menu').removeClass('sub-menu');
 
-	$('.main-banner').slick();
-
+	$('.main-banner, #main-banner-2, #main-banner-3').slick();
+	$('#main-banner-2, #main-banner-3').css({'position':'absolue','top':'-50000px'});
+	
 	$('.promos-banner').slick();
 
 	$('.detail-carousel').slick({
 		autoplay: true
+	});
+
+	$('.block-unity a').on('click', function (){
+		var current = $(this).attr('href').substr(1);
+		console.log(current);
+		$('.main-banner').css({'position':'relative','top':'0'}).addClass('hidden');
+		$('.main-banner.'+current).removeClass('hidden');
 	});
 
 	$('a.show-more').on('click', function (){
