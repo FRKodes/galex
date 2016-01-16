@@ -5,6 +5,12 @@ azulMedio = #1866B0
 amarillo = #FFC600
 .container-fluid.brands
 	overflow visible
+.container.all-content
+.home-text
+	font-size 1.4em
+.home-text
+	padding-top 30px
+	padding-bottom 30px
 .form-control
 	border 1px solid azulClaro
 	color azulClaro
@@ -34,7 +40,14 @@ amarillo = #FFC600
 	height auto
 	overflow hidden
 	max-height 750px
-
+	&.promos
+		max-height 900px
+	&.interiores
+		height 290px
+		max-height initial
+	&.home
+		height 290px
+		max-height initial
 .styled-select
 	background white url(./images/arrow.png) no-repeat right 2px
 	border 1px solid azulClaro
@@ -64,8 +77,8 @@ amarillo = #FFC600
 	margin 30px 0
 	
 body
-	background-color #4F8AB3
-	color azulClaro
+	background-color #3A8EFF
+	color white
 	font-family 'Yanone Kaffeesatz', sans-serif
 	padding-top 70px
 	.navbar-default
@@ -73,6 +86,7 @@ body
 		border-bottom 3px solid rojo
 		height 70px
 		overflow visible
+		z-index 999999
 		.navbar-header
 			overflow visible
 			height 70px
@@ -159,9 +173,37 @@ body
 	.main-banner
 		border-bottom 0px solid rojo
 		height auto
-		margin-bottom 50px
+		margin-bottom 150px
 		margin-top 30px
 		width 100%
+		position relative
+		z-index 99999
+		&.promos
+			margin-bottom 150px
+			.item
+				overflow hidden
+				height auto
+				background transparent
+				width 100%
+				display block
+				padding 0
+				img
+					width 100%
+					height auto
+		&.interiores
+			margin-bottom 0
+			.item
+				padding-top 0
+				img
+					width 100%
+					height auto
+		&.home
+			margin-bottom 0
+			.item
+				padding-top 0
+				img
+					width 100%
+					height auto
 		.item
 			overflow hidden
 			height auto
@@ -204,6 +246,11 @@ body
 			margin 20px 0 0
 			padding 0
 			position relative
+			width 30%
+			display inline-block
+			margin-right 3%
+			&:last-of-type
+				margin-right 0
 			a
 				img
 					display block
@@ -490,7 +537,7 @@ body
 			.title
 				font-size 1.2em
 				a
-					color azulClaro
+					color white
 			figure
 				border 6px solid rojo
 				margin 0
@@ -674,6 +721,11 @@ body
 					margin-top -100px
 					padding-bottom 20px
 					position relative
+		.banners-container
+			&.interiores
+				height 350px
+			&.home
+				height 350px
 		.place
 			.section-title
 				text-align center
@@ -702,6 +754,11 @@ body
 			.item
 				.bottom
 					margin-top -30px
+		.banners-container
+			&.interiores
+				height 400px
+			&.home
+				height 400px
 @media screen and (min-width:768px)
 	.sucursales
 		.styled-select select
@@ -868,6 +925,11 @@ body
 					img
 						width 100%
 						height auto
+		.banners-container
+			&.interiores
+				height 470px
+			&.home
+				height 470px
 		/*
 		sucursal Detail
 		*/
@@ -1051,6 +1113,11 @@ body
 							text-shadow 4px 0 0 azul, -2px 0 0 azul, 0 2px 0 azul, 0 -2px 0 azul, 2px 2px azul, -2px -2px 0 azul, 2px -2px 0 azul, -2px 2px 0 azul
 					p
 						font-size 1.5em
+		.banners-container
+			&.interiores
+				height 600px
+			&.home
+				height 600px
 		.place
 			padding-bottom 20px
 			.place-carousel
@@ -1127,8 +1194,6 @@ body
 				.title
 					font-size 1.4em
 					text-align left
-					a
-						color azulClaro
 				.info
 					background-color #D7D7D7
 					text-align left
@@ -1251,6 +1316,11 @@ body
 		.near-location
 			right 10%
 		.main-banner
+			&.promos
+				.item
+					padding-top 0px
+					img
+						width 100%
 			.item
 				padding-top 100px
 				img

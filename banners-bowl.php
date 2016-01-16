@@ -1,3 +1,5 @@
-<div class="item uno"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/banner01.png" alt=""></div>
-<div class="item dos"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/kids2x1.png" alt=""></div>
-<div class="item tres"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/sanFernando.png" alt=""></div>
+<?php
+$my_query = new WP_Query('post_type=banner&categoria=bowl-interiores');
+while ($my_query->have_posts()) : $my_query->the_post(); ?>
+	<div class="item"><img src="<?php the_field('imagen') ?>" alt=""></div><?php
+endwhile;  wp_reset_query(); ?>

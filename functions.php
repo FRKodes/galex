@@ -86,10 +86,61 @@ function create_sucursal_taxonomies() {
 
 }
 
+
+add_action( 'init', 'create_banner_post_type' );
+
+function create_banner_post_type() {
+	register_post_type( 'banner',
+		array(
+			'labels' => array(
+				'name' => __( 'Banners' ),
+				'singular_name' => __( 'Banner' )
+			),
+			'public' => true,
+			'has_archive' => false,
+			'supports' => array('title', 'thumbnail')
+		)
+	);
+	flush_rewrite_rules();
+}
+
+add_action( 'init', 'create_banner_cat_taxonomies', 0 );
+
+function create_banner_cat_taxonomies() {
+	// Add new taxonomy, make it hierarchical (like categories)
+	$labels = array(
+		'name'              => _x( 'Categorías', 'taxonomy general name' ),
+		'singular_name'     => _x( 'categoría', 'taxonomy singular name' ),
+		'search_items'      => __( 'Search Categorías' ),
+		'all_items'         => __( 'All Categorías' ),
+		'parent_item'       => __( 'Parent categoría' ),
+		'parent_item_colon' => __( 'Parent categoría:' ),
+		'edit_item'         => __( 'Edit categoría' ),
+		'update_item'       => __( 'Update categoría' ),
+		'add_new_item'      => __( 'Add New categoría' ),
+		'new_item_name'     => __( 'New categoría Name' ),
+		'menu_name'         => __( 'categoría' ),
+	);
+
+	$args = array(
+		'hierarchical'      => true,
+		'labels'            => $labels,
+		'show_ui'           => true,
+		'show_admin_column' => true,
+		'query_var'         => true,
+		'rewrite'           => array( 'slug' => 'categoria' ),
+	);
+
+	register_taxonomy( 'categoria', array( 'banner' ), $args );
+
+}
+
+
+
 function destino_final($host){
 	$extra = "";
 	if ($host != 'galex.dev') {
-		$extra = "/galex";
+		$extra = "";
 	}
 	return $extra;
 }

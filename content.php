@@ -15,10 +15,10 @@
 	</div>
 </div>
 
-<div class="container banners-container">
-	<div class="main-banner unidad diversiones"><?php include('banners-diversiones.php'); ?></div>
-	<div class="main-banner unidad kids" id="main-banner-2"><?php include('banners-kids.php'); ?></div>
-	<div class="main-banner unidad bowl" id="main-banner-3"><?php include('banners-bowl.php'); ?></div>
+<div class="container banners-container interiores">
+	<div class="main-banner unidad interiores diversiones"><?php include('banners-diversiones.php'); ?></div>
+	<div class="main-banner unidad interiores kids" id="main-banner-2"><?php include('banners-kids.php'); ?></div>
+	<div class="main-banner unidad interiores bowl" id="main-banner-3"><?php include('banners-bowl.php'); ?></div>
 </div>
 
 <div class="container all-content">

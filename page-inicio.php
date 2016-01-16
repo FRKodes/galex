@@ -34,15 +34,17 @@ get_header(); ?>
 				</div>
 			</div>
 			
-			<div class="container">
-				<div class="main-banner"><?php include('banner-principal.php'); ?></div>
+			<div class="container banners-container home">
+				<div class="main-banner home"><?php include('banner-principal.php'); ?></div>
 			</div>
 			
 			
 			
 		<?php if ( have_posts() ) : ?>
 			
-			<?php the_content() ?>
+			<div class="container home-text">
+				<?php the_content() ?>
+			</div>
 			
 		<?php endif;?>
 
