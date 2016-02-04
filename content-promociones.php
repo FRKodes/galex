@@ -1,6 +1,6 @@
 <?php //include('top-image.php'); ?>
 
-<div class="container-fluid brands">
+<div class="container brands">
 	<div class="brands-container">
 		<div class="block-unity">
 			<a href="#diversiones"><img class="back-image" src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-diversiones.jpg" alt=""></a>
