@@ -1,4 +1,4 @@
-<form action="" method="post" id="contactForm">
+<form action="sendmail-contacto.php" method="post" id="contactForm">
 	<div class="form-group"><input type="text" data-validate="required" placeholder="Escribe tu nombre completo" name="nombre" class="form-control"></div>
 	<div class="form-group"><input type="text" data-validate="required|email" placeholder="Escribe tu correo electrónico" name="email" class="form-control"></div>
 	<div class="form-group">

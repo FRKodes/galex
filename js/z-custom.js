@@ -26,10 +26,15 @@ $( document ).ready(function() {
 
 	$('ul.sub-menu').addClass('dropdown-menu').removeClass('sub-menu');
 
-	$('.main-banner, #main-banner-2, #main-banner-3').slick();
+	$('.main-banner, #main-banner-2, #main-banner-3').slick({
+		autoplay: true
+	});
+	
 	$('#main-banner-2, #main-banner-3').css({'position':'absolue','top':'-50000px'});
 	
-	$('.promos-banner').slick();
+	$('.promos-banner').slick({
+		autoplay: true
+	});
 
 	$('.detail-carousel').slick({
 		autoplay: true
@@ -40,6 +45,9 @@ $( document ).ready(function() {
 		console.log(current);
 		$('.main-banner').css({'position':'relative','top':'0'}).addClass('hidden');
 		$('.main-banner.'+current).removeClass('hidden');
+
+		$('.all-content .col-xs-12').addClass('hidden');
+		$('.text-'+current).removeClass('hidden');
 	});
 
 	$('a.show-more').on('click', function (){

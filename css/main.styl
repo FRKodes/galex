@@ -3,7 +3,7 @@ azul = #0C18C4
 azulClaro = #01AEF0
 azulMedio = #1866B0
 amarillo = #FFC600
-.container-fluid.brands
+.container.brands
 	overflow visible
 .container.all-content
 .home-text
@@ -46,7 +46,7 @@ amarillo = #FFC600
 		height 290px
 		max-height initial
 	&.home
-		height 290px
+		height 240px
 		max-height initial
 .styled-select
 	background white url(./images/arrow.png) no-repeat right 2px
@@ -240,15 +240,14 @@ body
 		.slick-next
 			right 0
 	.brands
-		border-bottom 0px solid rojo
-		padding-bottom 20px
+		border none
 		.block-unity
 			margin 20px 0 0
 			padding 0
 			position relative
 			width 30%
 			display inline-block
-			margin-right 3%
+			margin-right 4.5%
 			&:last-of-type
 				margin-right 0
 			a
@@ -692,14 +691,12 @@ body
 					margin 0 auto
 		.brands
 			text-align center
+			margin-top 80px
 			.block-unity
-				margin -50px 3% 0 0
+				margin-top -50px
 				padding 0
 				position relative
-				width 30%
 				display inline-block
-				&:last-of-type
-					margin-right 0
 		.promos-banner
 			.item
 				.title
@@ -982,7 +979,7 @@ body
 				margin 20px 3% 20px 0
 				width 30%
 				.title
-					font-size 1.4em
+					font-size 1em
 		/*Joint to the team @768px*/
 		#joinForm
 		#contactForm
@@ -1073,6 +1070,7 @@ body
 			&.background-pined
 				background transparent url(./images/pin-cercano.jpg) no-repeat left center
 		.brands
+			margin-top 10px
 			.block-unity
 				margin-top 20px
 		.promos-banner
@@ -1192,14 +1190,14 @@ body
 				&.last
 					margin-right 0
 				.title
-					font-size 1.4em
+					font-size 1.2em
 					text-align left
 				.info
 					background-color #D7D7D7
 					text-align left
 					height 200px
 					padding 10px
-					font-size 1.1em
+					font-size .9em
 					position relative
 					color azulClaro
 					.view-more
@@ -1325,10 +1323,12 @@ body
 				padding-top 100px
 				img
 					width 900px
+		.container.brands
+			padding-left 13px
 		.brands-container
-			width 1200px
-			margin-left auto
-			margin-right auto
+			width 100.5%
+			margin-left 0
+			margin-right 0
 		.promos-banner-container
 			background transparent url('./images/fondo-experiencia.png') no-repeat center center
 			background-size cover

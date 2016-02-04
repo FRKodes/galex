@@ -1,4 +1,4 @@
-<div class="container-fluid brands">
+<div class="container brands">
 	<div class="brands-container">
 		<div class="block-unity">
 			<a href="#diversiones"><img class="back-image" src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-diversiones.jpg" alt=""></a>
@@ -22,8 +22,11 @@
 </div>
 
 <div class="container all-content">
-	<div class="col-xs-12 col-sm-12">
-		<?php the_content(); ?>
-	</div>
+	
+	<div class="col-xs-12 text-diversiones"><?php the_content(); ?></div>
+	
+	<div class="col-xs-12 text-kids hidden"><?php the_field('descripcion_kids'); ?></div>
+	
+	<div class="col-xs-12 text-bowl hidden"><?php the_field('descripcion_bowls'); ?></div>
 
 </div>
