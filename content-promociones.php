@@ -19,6 +19,10 @@
 
 <div class="container banners-container promos">
 	<div class="main-banner promos diversiones"><?php include('banners-promos-diversiones.php'); ?></div>
-	<div class="main-banner promos kids" id="main-banner-2"><?php include('banners-promos-kids.php'); ?></div>
-	<div class="main-banner promos bowl" id="main-banner-3"><?php include('banners-promos-bowl.php'); ?></div>
+	<div class="main-banner promos hidden kids" id="main-banner-2"><?php include('banners-promos-kids.php'); ?></div>
+	<div class="main-banner promos hidden bowl" id="main-banner-3"><?php include('banners-promos-bowl.php'); ?></div>
+</div>
+
+<div class="container all-content">
+	<div class="col-xs-12"><?php the_content(); ?></div>
 </div>

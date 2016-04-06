@@ -30,8 +30,6 @@ $( document ).ready(function() {
 		autoplay: true
 	});
 	
-	$('#main-banner-2, #main-banner-3').css({'position':'absolue','top':'-50000px'});
-	
 	$('.promos-banner').slick({
 		autoplay: true
 	});
@@ -42,11 +40,11 @@ $( document ).ready(function() {
 
 	$('.block-unity a').on('click', function (){
 		var current = $(this).attr('href').substr(1);
-		console.log(current);
-		$('.main-banner').css({'position':'relative','top':'0'}).addClass('hidden');
+		// console.log(current);
+		$('.main-banner').addClass('hidden');
 		$('.main-banner.'+current).removeClass('hidden');
-
-		$('.all-content .col-xs-12').addClass('hidden');
+		// $('.loading').removeClass('hidden').delay(2000).addClass('hidden');
+		$('.all-content .col-xs-12.unidad_text').addClass('hidden');
 		$('.text-'+current).removeClass('hidden');
 	});
 
@@ -58,7 +56,7 @@ $( document ).ready(function() {
 
 	$('select#estado').change(function (){
 		var current = $(this).val().toLowerCase();
-		console.log(current);
+		// console.log(current);
 		$('.place').addClass('hidden');
 		$('.place.'+ current).toggleClass('hidden');
 		$('a.show-more').addClass('hidden');
@@ -97,7 +95,7 @@ $(document).ready(function(){
 
 $(document).ready(function(){
 	if (navigator.geolocation) {
-		$('.near-location').html('<img src="/wp-content/themes/galex/images/loader.gif" width="30" height="30" alt="loader gif">');
+		$('.near-location').html('<img class="loader_gif" src="/wp-content/themes/galex/images/loader.gif" width="30" height="30" alt="loader gif">');
 		var timeoutVal = 10 * 1000 * 1000;
 
 		navigator.geolocation.getCurrentPosition(
@@ -143,15 +141,15 @@ $(document).ready(function(){
 	function getLocations(lat1, lon1){
 		var locations = JSON.parse($('input[name="locations"]').val());
 		var current_distance = 0;
-		console.log('Locations: ' + locations.length);
+		// console.log('Locations: ' + locations.length);
 
 		for (var i = 0; i < locations.length; i++) {
 			current_distance = calculateDistance(lat1,lon1,locations[i].lat,locations[i].lng);
 			if (current_distance < 3500) {
-				console.log('Distancia: ' + current_distance);
-				console.log(locations[i].title);
-				console.log('ID: ' + locations[i].id);
-				$('.near-location').addClass('background-pined').html('<a href="' + locations[i].link + '" title=" ' + locations[i].title  + ' ">Sucursal más cercana:<br>' + locations[i].title + '</a>');
+				// console.log('Distancia: ' + current_distance);
+				// console.log(locations[i].title);
+				// console.log('ID: ' + locations[i].id);
+				$('.near-location').addClass('background-pined').html('<a class="hidden location_address" href="' + locations[i].link + '" title=" ' + locations[i].title  + ' ">Sucursal más cercana:<br>' + locations[i].title + '</a>');
 				$('input[name="featured"]').attr('value',locations[i].id);
 				$('#showNearLocation').trigger('click');
 			}else{
@@ -160,9 +158,17 @@ $(document).ready(function(){
 		};
 	}
 
+	$('.near-location').hover(
+		function() {
+			$('.location_address').removeClass('hidden')
+		}, function() {
+			$('.location_address').addClass('hidden')
+		}
+	);
+
 	$( "#showNearLocation" ).on( "click", function() {
 		var urlAPI = $('input[name="featured"]').attr('data-url') + $('input[name="featured"]').attr('value');
-		console.log(urlAPI);
+		// console.log(urlAPI);
 
 		// $.getJSON( urlAPI, {
 		// 	tags: "mount rainier",
@@ -177,7 +183,7 @@ $(document).ready(function(){
 		// 			}
 		// 		});
 		// 	});
-		console.log('done');
+		// console.log('done');
 	});
 
 	function calculateDistance(lat1,lon1,lat2,lon2){
@@ -236,13 +242,17 @@ jQuery(function(){
 		overallSuccess : function(){
 			var form    = jQuery('#contactForm'),
 				email   = form.find( "input[name='email']" ).val(),
+				nombre   = form.find( "input[name='nombre']" ).val(),
+				motivo   = form.find( "select[name='motivo']" ).val(),
+				mensaje   = form.find( "textarea[name='mensaje']" ).val(),
 				action  = form.attr( "action"),
 				url     = action;
 			var posting = jQuery.post( 
-				url, { e: email }
+				url, { e: email, n:nombre, mo:motivo, m:mensaje }
 				);
 			posting.done(function( data ) {
 				console.log(data);
+
 				jQuery('#contactForm')[0].reset();
 				jQuery('.sent_mail_alert').fadeIn().delay(2000).fadeOut();
 			});
@@ -260,10 +270,14 @@ jQuery(function(){
 		overallSuccess : function(){
 			var form    = jQuery('#joinForm'),
 				email   = form.find( "input[name='email']" ).val(),
+				nombre   = form.find( "input[name='nombre']" ).val(),
+				telefono   = form.find( "input[name='telefono']" ).val(),
+				direccion   = form.find( "input[name='direccion']" ).val(),
+				escolaridad   = form.find( "input[name='escolaridad']" ).val(),
 				action  = form.attr( "action"),
 				url     = action;
 			var posting = jQuery.post( 
-				url, { e: email }
+				url, { e: email, n:nombre, t:telefono, d:direccion, es:escolaridad }
 				);
 			posting.done(function( data ) {
 				console.log(data);

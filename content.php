@@ -23,10 +23,8 @@
 
 <div class="container all-content">
 	
-	<div class="col-xs-12 text-diversiones"><?php the_content(); ?></div>
-	
-	<div class="col-xs-12 text-kids hidden"><?php the_field('descripcion_kids'); ?></div>
-	
-	<div class="col-xs-12 text-bowl hidden"><?php the_field('descripcion_bowls'); ?></div>
+	<div class="col-xs-12 unidad_text text-diversiones"><?php the_content(); ?></div>
+	<div class="col-xs-12 unidad_text text-kids hidden"><?php the_field('descripcion_kids'); ?></div>
+	<div class="col-xs-12 unidad_text text-bowl hidden"><?php the_field('descripcion_bowls'); ?></div>
 
 </div>

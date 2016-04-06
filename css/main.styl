@@ -39,11 +39,8 @@ amarillo = #FFC600
 .banners-container
 	height auto
 	overflow hidden
-	max-height 750px
-	&.promos
-		max-height 900px
 	&.interiores
-		height 290px
+		height 260px
 		max-height initial
 	&.home
 		height 240px
@@ -170,6 +167,8 @@ body
 		a
 			color white
 			text-decoration none
+	.banners-container.festeja
+		max-height initial
 	.main-banner
 		border-bottom 0px solid rojo
 		height auto
@@ -178,8 +177,8 @@ body
 		width 100%
 		position relative
 		z-index 99999
-		&.promos
-			margin-bottom 150px
+		&.festeja
+			margin-bottom 0px
 			.item
 				overflow hidden
 				height auto
@@ -190,6 +189,20 @@ body
 				img
 					width 100%
 					height auto
+		&.promos
+			margin-bottom 30px
+			display block
+			.item
+				overflow hidden
+				height auto
+				background transparent
+				width 100%
+				padding 0
+				display block
+				img
+					width 100%
+					height auto
+					display block
 		&.interiores
 			margin-bottom 0
 			.item
@@ -247,7 +260,7 @@ body
 			position relative
 			width 30%
 			display inline-block
-			margin-right 4.5%
+			margin-right 4.3%
 			&:last-of-type
 				margin-right 0
 			a
@@ -697,6 +710,7 @@ body
 				padding 0
 				position relative
 				display inline-block
+				margin-right 4.5%
 		.promos-banner
 			.item
 				.title
@@ -798,23 +812,38 @@ body
 							padding 0 4px
 							vertical-align top
 							&:hover
+							&.current_page_item
 								padding-top 10px
 							&.page-item-8:hover
 								background azul url(./images/sprite-icons_.png) no-repeat -180px 10px
+							&.page-item-8.current_page_item
+								background azul url(./images/sprite-icons_.png) no-repeat -170px 10px
 							&.page-item-33:hover
 								background azul url(./images/sprite-icons_.png) no-repeat -250px 10px
+							&.page-item-33.current_page_item
+								background azul url(./images/sprite-icons_.png) no-repeat -650px 10px
 							&.page-item-23:hover
+							&.page-item-23.current_page_item
 								background azul url(./images/sprite-icons_.png) no-repeat -115px 10px
 							&.page-item-18:hover
+							&.page-item-18.current_page_item
 								background azul url(./images/sprite-icons_.png) no-repeat -365px 10px
 							&.page-item-49:hover
 								background azul url(./images/sprite-icons_.png) no-repeat -440px 10px
+							&.page-item-49.current_page_item
+								background azul url(./images/sprite-icons_.png) no-repeat -430px 10px
 							&.page-item-37:hover
 								background azul url(./images/sprite-icons_.png) no-repeat -530px 10px
+							&.page-item-37.current_page_item
+								background azul url(./images/sprite-icons_.png) no-repeat -520px 10px
 							&.page-item-26:hover
 								background azul url(./images/sprite-icons_.png) no-repeat -35px 10px
+							&.page-item-26.current_page_item
+								background azul url(./images/sprite-icons_.png) no-repeat -30px 10px
 							&.page-item-31:hover
 								background azul url(./images/sprite-icons_.png) no-repeat 20px 10px
+							&.page-item-31.current_page_item
+								background azul url(./images/sprite-icons_.png) no-repeat 32px 10px
 							&:last-of-type
 								margin-right 0
 							a
@@ -924,7 +953,7 @@ body
 						height auto
 		.banners-container
 			&.interiores
-				height 470px
+				height 460px
 			&.home
 				height 470px
 		/*
@@ -1060,13 +1089,21 @@ body
 				padding-top 100px
 				img
 					width 800px
+		.loader_gif
+			position absolute
+			left 0
+			top 0
 		.near-location
 			color white
 			display inline-block
 			padding 10px 0 10px 40px
 			position absolute
+			width 150px
+			height 35px
 			left 10px
 			top 450px
+			&:hover
+				cursor pointer
 			&.background-pined
 				background transparent url(./images/pin-cercano.jpg) no-repeat left center
 		.brands
@@ -1113,7 +1150,7 @@ body
 						font-size 1.5em
 		.banners-container
 			&.interiores
-				height 600px
+				height 580px
 			&.home
 				height 600px
 		.place
