@@ -8,7 +8,7 @@
 		while ($my_query->have_posts()) : $my_query->the_post(); ?>
 			<div class="block-unity">
 				<a href="#<?php strtolower(the_title()); ?>"><img class="back-image" src="<?php the_field('imagen_normal') ?>" alt="<?php the_title() ?>"></a>
-				<a href="#<?php strtolower(the_title()); ?>" class="logo-brand"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex.png" alt="<?php the_title() ?>"></a>
+				<a href="#<?php strtolower(the_title()); ?>" class="logo-brand"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex-<?php the_title() ?>.png" alt="<?php the_title() ?>"></a>
 			</div><?php
 		endwhile;  wp_reset_query();
 		?>
