@@ -2,18 +2,16 @@
 
 <div class="container brands">
 	<div class="brands-container">
-		<div class="block-unity">
-			<a href="#diversiones"><img class="back-image" src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-diversiones.jpg" alt=""></a>
-			<a href="#diversiones" class="logo-brand"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex.png" alt=""></a>
-		</div>
-		<div class="block-unity">
-			<a href="#kids"><img class="back-image" src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-kids.jpg" alt=""></a>
-			<a href="#kids" class="logo-brand"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/kids.png" alt=""></a>
-		</div>
-		<div class="block-unity">
-			<a href="#bowl"><img class="back-image" src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/galex-bowl.jpg" alt="Galex Bowl"></a>
-			<a href="#bowl" class="logo-brand"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex-bowl.png" alt="logo galex bowl"></a>
-		</div>
+
+		<?php
+		$my_query = new WP_Query('post_type=boton_top');
+		while ($my_query->have_posts()) : $my_query->the_post(); ?>
+			<div class="block-unity">
+				<a href="#<?php strtolower(the_title()); ?>"><img class="back-image" src="<?php the_field('imagen_normal') ?>" alt="<?php the_title() ?>"></a>
+				<a href="#<?php strtolower(the_title()); ?>" class="logo-brand"><img src="<?php echo destino_final($_SERVER['HTTP_HOST']) ?>/wp-content/themes/galex/images/logo-galex.png" alt="<?php the_title() ?>"></a>
+			</div><?php
+		endwhile;  wp_reset_query();
+		?>
 	</div>
 </div>
 

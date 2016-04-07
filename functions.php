@@ -35,6 +35,26 @@ function create_promo_post_type() {
 	);
 }
 
+add_action( 'init', 'create_botton_top_post_type' );
+
+function create_botton_top_post_type() {
+	register_post_type( 'boton_top',
+		array(
+			'labels' => array(
+				'name' => __( 'Botones top' ),
+				'singular_name' => __( 'Botón top' )
+			),
+			'public' => true,
+			'has_archive' => true,
+			'supports' => array(
+					'title',
+					'thumbnail',
+					)
+		)
+	);
+	flush_rewrite_rules();
+}
+
 add_action( 'init', 'create_sucursal_post_type' );
 
 function create_sucursal_post_type() {
