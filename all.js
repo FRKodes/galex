@@ -169,122 +169,85 @@ $(document).ready(function(){
 	});
 });
 
-$(document).ready(function(){
-	if (navigator.geolocation) {
-		$('.near-location').html('<img class="loader_gif" src="/wp-content/themes/galex/images/loader.gif" width="30" height="30" alt="loader gif">');
-		var timeoutVal = 10 * 1000 * 1000;
+// $(document).ready(function(){
+// 	if (navigator.geolocation) {
+// 		$('.near-location').html('<img class="loader_gif" src="/wp-content/themes/galex/images/loader.gif" width="30" height="30" alt="loader gif">');
+// 		var timeoutVal = 10 * 1000 * 1000;
 
-		navigator.geolocation.getCurrentPosition(
-			displayPosition, 
-			displayError,
-			{ 
-				enableHighAccuracy: true,
-				timeout: timeoutVal,
-				maximumAge: 0 
-			});
-	}else {
-		alert("Geolocation is not supported by this browser");
-	}
+// 		navigator.geolocation.getCurrentPosition(
+// 			displayPosition, 
+// 			displayError,
+// 			{ 
+// 				enableHighAccuracy: true,
+// 				timeout: timeoutVal,
+// 				maximumAge: 0 
+// 			});
+// 	}else {
+// 		alert("Geolocation is not supported by this browser");
+// 	}
 
-	function toRad(num){
-		// if (typeof(Number.prototype.toRad) === "undefined") {
-		//   Number.prototype.toRad = function() {
-		//     return this * Math.PI / 180;
-		//   }
-		// }
-		// 	
-		return num * Math.PI / 180;
-	}
-	function displayPosition(position) {
-		/*
-		this was just testing stuff
-		 */
-		// alert("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
-		// $('.near-location').html("Lat: " + position.coords.latitude + ", Lng: " + position.coords.longitude);
+// 	function toRad(num){
+// 		return num * Math.PI / 180;
+// 	}
+// 	function displayPosition(position) {
+// 		var lat1 = position.coords.latitude;
+// 		var lon1 = position.coords.longitude;
+// 		var lat2 = 20.695466;
+// 		var lon2 = -103.373948;
+// 		getLocations(lat1, lon1);
+// 	}
 
-		var lat1 = position.coords.latitude;
-		var lon1 = position.coords.longitude;
-		var lat2 = 20.695466;
-		var lon2 = -103.373948;
-		// var distance = calculateDistance(lat1,lon1,lat2,lon2);
+// 	function getLocations(lat1, lon1){
+// 		var locations = JSON.parse($('input[name="locations"]').val());
+// 		var current_distance = 0;
 		
-		// console.log(distance);
+// 		for (var i = 0; i < locations.length; i++) {
+// 			current_distance = calculateDistance(lat1,lon1,locations[i].lat,locations[i].lng);
+// 			if (current_distance < 3500) {
+// 				$('.near-location').addClass('background-pined').html('<a class="hidden location_address" href="' + locations[i].link + '" title=" ' + locations[i].title  + ' ">Sucursal más cercana:<br>' + locations[i].title + '</a>');
+// 				$('input[name="featured"]').attr('value',locations[i].id);
+// 				$('#showNearLocation').trigger('click');
+// 			}else{
+// 				$('.near-location').html();
+// 			};
+// 		};
+// 	}
 
+// 	$('.near-location').hover(
+// 		function() {
+// 			$('.location_address').removeClass('hidden')
+// 		}, function() {
+// 			$('.location_address').addClass('hidden')
+// 		}
+// 	);
 
-		getLocations(lat1, lon1);
-	}
+// 	$( "#showNearLocation" ).on( "click", function() {
+// 		var urlAPI = $('input[name="featured"]').attr('data-url') + $('input[name="featured"]').attr('value');
+// 	});
 
-	function getLocations(lat1, lon1){
-		var locations = JSON.parse($('input[name="locations"]').val());
-		var current_distance = 0;
-		// console.log('Locations: ' + locations.length);
+// 	function calculateDistance(lat1,lon1,lat2,lon2){
+// 		var R = 6371000; // metres
+// 		var φ1 = toRad(lat1);
+// 		var φ2 = toRad(lat2);
+// 		var Δφ = toRad(lat2-lat1);
+// 		var Δλ = toRad(lon2-lon1);
+// 		var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
+// 		        Math.cos(φ1) * Math.cos(φ2) *
+// 		        Math.sin(Δλ/2) * Math.sin(Δλ/2);
+// 		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
+// 		var d = R * c;
+// 		return parseInt(d);
+// 	}
 
-		for (var i = 0; i < locations.length; i++) {
-			current_distance = calculateDistance(lat1,lon1,locations[i].lat,locations[i].lng);
-			if (current_distance < 3500) {
-				// console.log('Distancia: ' + current_distance);
-				// console.log(locations[i].title);
-				// console.log('ID: ' + locations[i].id);
-				$('.near-location').addClass('background-pined').html('<a class="hidden location_address" href="' + locations[i].link + '" title=" ' + locations[i].title  + ' ">Sucursal más cercana:<br>' + locations[i].title + '</a>');
-				$('input[name="featured"]').attr('value',locations[i].id);
-				$('#showNearLocation').trigger('click');
-			}else{
-				$('.near-location').html();
-			};
-		};
-	}
-
-	$('.near-location').hover(
-		function() {
-			$('.location_address').removeClass('hidden')
-		}, function() {
-			$('.location_address').addClass('hidden')
-		}
-	);
-
-	$( "#showNearLocation" ).on( "click", function() {
-		var urlAPI = $('input[name="featured"]').attr('data-url') + $('input[name="featured"]').attr('value');
-		// console.log(urlAPI);
-
-		// $.getJSON( urlAPI, {
-		// 	tags: "mount rainier",
-		// 	tagmode: "any",
-		// 	format: "json"
-		// 	})
-		// 	.done(function( data ) {
-		// 		$.each( data.items, function( i, item ) {
-		// 			$( "<img>" ).attr( "src", item.media.m ).appendTo( "#images" );
-		// 			if ( i === 3 ) {
-		// 				return false;
-		// 			}
-		// 		});
-		// 	});
-		// console.log('done');
-	});
-
-	function calculateDistance(lat1,lon1,lat2,lon2){
-		var R = 6371000; // metres
-		var φ1 = toRad(lat1);
-		var φ2 = toRad(lat2);
-		var Δφ = toRad(lat2-lat1);
-		var Δλ = toRad(lon2-lon1);
-		var a = Math.sin(Δφ/2) * Math.sin(Δφ/2) +
-		        Math.cos(φ1) * Math.cos(φ2) *
-		        Math.sin(Δλ/2) * Math.sin(Δλ/2);
-		var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a));
-		var d = R * c;
-		return parseInt(d);
-	}
-
-	function displayError(error) {
-		var errors = { 
-			1: 'Diversiones Galex necesita saber tu ubicación para mostrarte información especial basada en tu ubicación.',
-			2: 'Posición no disponible',
-			3: 'La solicitud tardó demasiado tiempo, intenta de nuevo más tarde.'
-		};
-		alert("Error: " + errors[error.code]);
-	}
-});
+// 	function displayError(error) {
+// 		var errors = { 
+// 			1: 'Diversiones Galex necesita saber tu ubicación para mostrarte información especial basada en tu ubicación.',
+// 			2: 'Posición no disponible',
+// 			3: 'La solicitud tardó demasiado tiempo, intenta de nuevo más tarde.'
+// 		};
+// 		alert("Error: " + errors[error.code]);
+// 	}
+// });
 
 /* validator */
 jQuery(function(){
