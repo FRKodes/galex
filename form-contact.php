@@ -1,4 +1,4 @@
-<form action="sendmail-contacto.php" method="post" id="contactForm">
+<form action="/sendmail-contacto.php" method="post" id="contactForm">
 	<div class="form-group"><input type="text" data-validate="required" placeholder="Escribe tu nombre completo" name="nombre" class="form-control"></div>
 	<div class="form-group"><input type="text" data-validate="required|email" placeholder="Escribe tu correo electrónico" name="email" class="form-control"></div>
 	<div class="form-group">
@@ -13,4 +13,5 @@
 	<div class="form-group"><textarea name="mensaje" id="mensaje" data-validate="required" placeholder="Mensaje" class="form-control" cols="30" rows="10"></textarea></div>
 	<p>Todos los campos son obligatorios.</p>
 	<div class="submit-line"><input type="submit" value="Enviar" class="btn btn-primary"></div>
+	<div class="sent_mail_alert">GRACIAS! <br> Tus mensaje se ha enviado con éxito.</div>
 </form>
